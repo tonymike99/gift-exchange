@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { DarkMode } from "../index";
 
 function Header() {
   return (
@@ -10,6 +11,7 @@ function Header() {
         <Link to="/">Home</Link>
         <Link to="/contact">Contact Us</Link>
         <Link to="/login">Login/Signup</Link>
+        <DarkMode />
       </div>
     </header>
   );

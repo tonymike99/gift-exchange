@@ -1,0 +1,19 @@
+:root {
+  --background-color: #f8fafc;
+  --font-color: #16172b;
+}
+
+[data-theme="dark"] {
+  --background-color: #16172b;
+  --font-color: #f8fafc;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+nav {
+  background-color: var(--font-color);
+  color: var(--background-color);
+}
