@@ -1,0 +1,16 @@
+.main-container {
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+@media screen and (max-width: 600px) {
+  .main-container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+}
