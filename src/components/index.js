@@ -4,5 +4,14 @@ import DarkMode from "./DarkMode/DarkMode";
 import Sidebar from "./Sidebar/Sidebar";
 import Navbar from "./Navbar/Navbar";
 import ListsTable from "./ListsTable/ListsTable";
+import WishlistProductsTable from "./WishlistProductsTable/WishlistProductsTable";
 
-export { Header, Footer, DarkMode, Sidebar, Navbar, ListsTable };
+export {
+  Header,
+  Footer,
+  DarkMode,
+  Sidebar,
+  Navbar,
+  ListsTable,
+  WishlistProductsTable,
+};
