@@ -6,6 +6,7 @@ import {
   Login,
   Signup,
   Profile,
+  PersonalLists,
   PageNotFound,
 } from "./pages/index";
 import { Header, Footer } from "./components/index";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/lists/personal" element={<PersonalLists />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
