@@ -1,6 +1,7 @@
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import CheckIcon from "@mui/icons-material/Check";
+import ClearIcon from "@mui/icons-material/Clear";
 import { Link } from "react-router-dom";
 
 function ListTable() {
@@ -31,7 +32,10 @@ function ListTable() {
               <DeleteIcon color="error" />
             </span>
             <span className="cursor-pointer">
-              <ExitToAppIcon color="error" />
+              <CheckIcon color="info" />
+            </span>
+            <span className="cursor-pointer">
+              <ClearIcon color="error" />
             </span>
           </td>
         </tr>
