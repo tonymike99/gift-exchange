@@ -1,5 +1,5 @@
 import styles from "./SharedWithMeLists.module.css";
-import { Sidebar, Navbar, ListTable } from "../../components/index";
+import { Sidebar, Navbar, ListsTable } from "../../components/index";
 import PeopleIcon from "@mui/icons-material/People";
 import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
 
@@ -13,12 +13,12 @@ function SharedWithMeLists() {
         <h2 className="text-2xl font-bold">
           <PeopleIcon /> Joined
         </h2>
-        <ListTable />
+        <ListsTable />
 
         <h2 className="text-2xl font-bold">
           <MarkEmailUnreadIcon /> Invitations
         </h2>
-        <ListTable />
+        <ListsTable />
       </main>
       <Navbar />
     </div>

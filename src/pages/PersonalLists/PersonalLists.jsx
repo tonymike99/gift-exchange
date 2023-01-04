@@ -1,5 +1,5 @@
 import styles from "./PersonalLists.module.css";
-import { Sidebar, Navbar, ListTable } from "../../components/index";
+import { Sidebar, Navbar, ListsTable } from "../../components/index";
 import AddIcon from "@mui/icons-material/Add";
 
 function PersonalLists() {
@@ -13,7 +13,7 @@ function PersonalLists() {
           <AddIcon /> Create list
         </button>
 
-        <ListTable />
+        <ListsTable />
       </main>
       <Navbar />
     </div>

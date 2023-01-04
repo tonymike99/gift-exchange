@@ -4,7 +4,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Link } from "react-router-dom";
 
-function ListTable() {
+function ListsTable() {
   return (
     <table>
       <thead>
@@ -44,4 +44,4 @@ function ListTable() {
   );
 }
 
-export default ListTable;
+export default ListsTable;
