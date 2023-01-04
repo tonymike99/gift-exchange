@@ -1,9 +1,6 @@
 import styles from "./PersonalLists.module.css";
-import { Sidebar, Navbar } from "../../components/index";
+import { Sidebar, Navbar, ListTable } from "../../components/index";
 import AddIcon from "@mui/icons-material/Add";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import { Link } from "react-router-dom";
 
 function PersonalLists() {
   return (
@@ -16,35 +13,7 @@ function PersonalLists() {
           <AddIcon /> Create list
         </button>
 
-        <table>
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>Name</th>
-              <th>Visibility</th>
-              <th>Options</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1.</td>
-              <td>
-                <Link to={`/`} className="underline">
-                  Birthday
-                </Link>
-              </td>
-              <td>Private</td>
-              <td>
-                <span className="cursor-pointer">
-                  <EditIcon color="info" />
-                </span>
-                <span className="cursor-pointer">
-                  <DeleteIcon color="error" />
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ListTable />
       </main>
       <Navbar />
     </div>
