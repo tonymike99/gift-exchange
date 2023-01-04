@@ -35,14 +35,12 @@ function PersonalLists() {
               </td>
               <td>Private</td>
               <td>
-                <button className="bg-blue-500 text-white py-2 rounded-lg w-20">
-                  <EditIcon />
-                  Edit
-                </button>{" "}
-                <button className="bg-red-500 text-white py-2 rounded-lg w-20">
-                  <DeleteIcon />
-                  Delete
-                </button>
+                <span className="cursor-pointer">
+                  <EditIcon color="info" />
+                </span>
+                <span className="cursor-pointer">
+                  <DeleteIcon color="error" />
+                </span>
               </td>
             </tr>
           </tbody>
