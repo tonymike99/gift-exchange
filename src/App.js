@@ -9,6 +9,7 @@ import {
   PersonalLists,
   PublicLists,
   PageNotFound,
+  SharedWithMeLists,
 } from "./pages/index";
 import { Header, Footer } from "./components/index";
 
@@ -24,6 +25,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/lists/personal" element={<PersonalLists />} />
         <Route path="/lists/public" element={<PublicLists />} />
+        <Route path="/lists/shared-with-me" element={<SharedWithMeLists />} />
+
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
