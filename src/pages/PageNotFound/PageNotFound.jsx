@@ -1,4 +1,4 @@
-const errorImage = require("../../static/img/404_error.svg");
+const errorImage = require("../../assets/img/404_error.svg");
 
 function PageNotFound() {
   return (

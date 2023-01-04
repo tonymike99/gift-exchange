@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const mysteryBox = require("../../static/img/mystery-box.svg");
+const mysteryBox = require("../../assets/img/mystery-box.svg");
 
 function Home() {
   return (

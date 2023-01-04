@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
-const googleIconColored = require("../../static/img/google-icon-colored.svg");
+const googleIconColored = require("../../assets/img/google-icon-colored.svg");
 
 function Login() {
   return (
