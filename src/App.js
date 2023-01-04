@@ -7,6 +7,7 @@ import {
   Signup,
   Profile,
   PersonalLists,
+  PublicLists,
   PageNotFound,
 } from "./pages/index";
 import { Header, Footer } from "./components/index";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/lists/personal" element={<PersonalLists />} />
+        <Route path="/lists/public" element={<PublicLists />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
