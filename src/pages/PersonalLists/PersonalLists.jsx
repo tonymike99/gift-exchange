@@ -12,7 +12,7 @@ function PersonalLists() {
       <main className=" p-6 flex flex-col gap-8">
         <h1 className="text-4xl font-bold">Personal Lists</h1>
 
-        <button className="bg-blue-500 text-white py-2 rounded-lg w-40">
+        <button className="bg-blue-500 text-white py-2 rounded-lg w-32">
           <AddIcon /> Create list
         </button>
 
