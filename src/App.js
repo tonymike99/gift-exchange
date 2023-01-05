@@ -12,7 +12,7 @@ import {
   SharedWithMeLists,
 } from "./pages/index";
 import { Header, Footer } from "./components/index";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, Slide } from "react-toastify";
 
 function App() {
   return (
@@ -33,14 +33,15 @@ function App() {
       <Footer />
       <ToastContainer
         position="bottom-right"
-        autoClose={2500}
+        autoClose={1500}
         hideProgressBar={false}
         newestOnTop={false}
+        pauseOnFocusLoss={false}
         pauseOnHover={false}
         rtl={false}
-        pauseOnFocusLoss
         closeOnClick
         draggable
+        transition={Slide}
       />
     </>
   );
