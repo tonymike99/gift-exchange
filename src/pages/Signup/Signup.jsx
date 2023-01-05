@@ -27,6 +27,14 @@ function Signup() {
             className="border"
           />
           <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter your username"
+            required
+            className="border"
+          />
+          <input
             type="password"
             name="password"
             id="password"
