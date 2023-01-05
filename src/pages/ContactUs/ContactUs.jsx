@@ -24,11 +24,19 @@ function ContactUs() {
             required
             className="border"
           />
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            placeholder="Subject"
+            required
+            className="border"
+          />
           <textarea
             name="description"
             id="description"
             cols="30"
-            rows="10"
+            rows="8"
             placeholder="Description"
             required
             className="border"
