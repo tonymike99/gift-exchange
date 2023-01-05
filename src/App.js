@@ -12,6 +12,7 @@ import {
   SharedWithMeLists,
 } from "./pages/index";
 import { Header, Footer } from "./components/index";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </>
   );
 }
