@@ -14,7 +14,7 @@ function Home() {
           birthdays, weddings, anniversaries, etc. We help you solve this.
         </p>
         <Link to="/login">
-          <button className="bg-blue-500 text-white py-2 rounded-lg w-40 md:w-80">
+          <button className="bg-blue-500 text-white py-2 rounded-lg w-32">
             Get started
           </button>
         </Link>
