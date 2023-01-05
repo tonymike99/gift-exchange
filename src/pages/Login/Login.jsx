@@ -29,14 +29,17 @@ function Login() {
           <button className="bg-blue-500 text-white py-4 px-2 rounded-lg">
             Sign in
           </button>
-          <button className="bg-white text-black py-4 px-2 rounded-lg relative border">
+          <a
+            href="http://localhost:3001/oauth2/google"
+            className="bg-white text-black py-4 px-2 rounded-lg relative border text-center"
+          >
             <img
               src={googleIconColored.default}
               alt=""
               className="absolute top-1/2 left-10 -translate-y-1/2 -translate-x-1/2"
             />
             Sign in with Google
-          </button>
+          </a>
         </form>
         <p className="mt-4 text-center">
           Don't have an account?{" "}
