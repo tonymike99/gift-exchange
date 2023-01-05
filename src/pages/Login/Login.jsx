@@ -29,6 +29,7 @@ function Login() {
           <button className="bg-blue-500 text-white py-4 px-2 rounded-lg">
             Sign in
           </button>
+          <p className="text-center">OR</p>
           <a
             href="http://localhost:3001/oauth2/google"
             className="bg-white text-black py-4 px-2 rounded-lg relative border text-center"
