@@ -2,35 +2,39 @@ import FingerprintIcon from "@mui/icons-material/Fingerprint";
 import BadgeIcon from "@mui/icons-material/Badge";
 import EmailIcon from "@mui/icons-material/Email";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { useSelector } from "react-redux";
 
 function Profile() {
+  const user = useSelector((state) => state.user);
+  const { id, name, email, created, image } = user.data;
+
   return (
-    <main className="p-6 flex flex-col md:flex-row gap-8 items-center">
-      <img src="" alt="" className="rounded-full border w-1/2" />
+    <main className="p-6 flex flex-col md:flex-row gap-8 justify-center items-center">
+      <img src={image} alt="" className="rounded-full border w-32" />
       <div className="flex flex-col gap-4">
         <p>
           <span className="font-bold mr-2">
             <FingerprintIcon /> Id:
           </span>
-          12345
+          {id}
         </p>
         <p>
           <span className="font-bold mr-2">
             <BadgeIcon /> Name:
           </span>
-          Tony
+          {name}
         </p>
         <p>
           <span className="font-bold mr-2">
             <EmailIcon /> Email:
           </span>
-          tonymike99@gmail.com
+          {email}
         </p>
         <p>
           <span className="font-bold mr-2">
             <CalendarMonthIcon /> Joined Date:
           </span>
-          01/01/2023
+          {created.slice(0, 10)}
         </p>
       </div>
     </main>
