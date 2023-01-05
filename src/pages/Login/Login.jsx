@@ -11,10 +11,10 @@ function Login() {
         <h1 className="text-4xl font-bold mb-6 text-center">Login</h1>
         <form className="flex flex-col gap-6" action="" method="POST">
           <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter your email"
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter your username"
             required
             className="border"
           />
