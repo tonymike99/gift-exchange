@@ -1,3 +1,4 @@
+import { SERVER_URL } from "../../constants/constants";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
 const googleIconColored = require("../../assets/img/google-icon-colored.svg");
@@ -31,7 +32,7 @@ function Login() {
           </button>
           <p className="text-center">OR</p>
           <a
-            href="http://localhost:3001/oauth2/google"
+            href={`${SERVER_URL}/oauth2/google`}
             className="bg-white text-black py-4 px-2 rounded-lg relative border text-center"
           >
             <img
