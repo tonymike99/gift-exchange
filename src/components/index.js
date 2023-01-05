@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import Navbar from "./Navbar/Navbar";
 import ListsTable from "./ListsTable/ListsTable";
 import WishlistProductsTable from "./WishlistProductsTable/WishlistProductsTable";
+import MenuList from "./MenuList/MenuList";
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   Navbar,
   ListsTable,
   WishlistProductsTable,
+  MenuList,
 };
