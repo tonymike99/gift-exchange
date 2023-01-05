@@ -34,19 +34,20 @@ function Header() {
     setExpandMenu(false);
   };
 
-  user.status === "succeeded" &&
-    user.data.name &&
+  if (user.status === "succeeded" && user.data.name) {
+    localStorage.setItem("userId", user.data.id);
     toast.success("You are now logged in!", {
       theme: toastTheme,
       toastId: "1",
     });
+  }
 
-  user.status === "failed" &&
-    user.error &&
+  if (user.status === "failed" && user.error) {
     toast.error(user.error, {
       theme: toastTheme,
       toastId: "2",
     });
+  }
 
   return (
     <header className="p-6">
