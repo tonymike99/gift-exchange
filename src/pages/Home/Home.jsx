@@ -19,7 +19,7 @@ function Home() {
           </button>
         </Link>
       </div>
-      <div className="md:w-3/4 xl:w-1/2 2xl:w-1/4">
+      <div className="md:w-3/5 xl:w-2/5 2xl:w-1/4">
         <img src={mysteryBox.default} alt="" />
       </div>
     </main>
