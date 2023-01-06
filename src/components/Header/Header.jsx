@@ -17,6 +17,7 @@ function Header() {
 
   useEffect(() => {
     dispatch(getUserDetails());
+    // eslint-disable-next-line
   }, []);
 
   const [expandHeader, setExpandHeader] = useState(false);

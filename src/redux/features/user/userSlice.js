@@ -45,6 +45,7 @@ const userSlice = createSlice({
   },
 });
 
+// eslint-disable-next-line
 export const {} = userSlice.actions;
 export const userReducer = userSlice.reducer;
 export { getUserDetails, userSlice, user };
