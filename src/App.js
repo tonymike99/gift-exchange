@@ -7,10 +7,11 @@ import {
   Signup,
   Profile,
   Lists,
-  PersonalLists,
-  PublicLists,
+  CreatedLists,
+  JoinedLists,
+  DiscoverLists,
+  Invitations,
   PageNotFound,
-  SharedWithMeLists,
 } from "./pages/index";
 import { Header, Footer } from "./components/index";
 import { ToastContainer, Slide } from "react-toastify";
@@ -30,10 +31,10 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/lists" element={<Lists />} />
-
-          <Route path="/lists/personal" element={<PersonalLists />} />
-          <Route path="/lists/public" element={<PublicLists />} />
-          <Route path="/lists/shared-with-me" element={<SharedWithMeLists />} />
+          <Route path="/lists/created" element={<CreatedLists />} />
+          <Route path="/lists/joined" element={<JoinedLists />} />
+          <Route path="/lists/discover" element={<DiscoverLists />} />
+          <Route path="/lists/invitations" element={<Invitations />} />
         </Route>
 
         {/* Restricted Routes */}

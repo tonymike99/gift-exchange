@@ -5,9 +5,10 @@ import Signup from "./Signup/Signup";
 import Profile from "./Profile/Profile";
 import Lists from "./Lists/Lists";
 import IndividualList from "./IndividualList/IndividualList";
-import PersonalLists from "./PersonalLists/PersonalLists";
-import PublicLists from "./PublicLists/PublicLists";
-import SharedWithMeLists from "./SharedWithMeLists/SharedWithMeLists";
+import CreatedLists from "./CreatedLists/CreatedLists";
+import JoinedLists from "./JoinedLists/JoinedLists";
+import DiscoverLists from "./DiscoverLists/DiscoverLists";
+import Invitations from "./Invitations/Invitations";
 import PageNotFound from "./PageNotFound/PageNotFound";
 
 export {
@@ -18,8 +19,9 @@ export {
   Profile,
   Lists,
   IndividualList,
-  PersonalLists,
+  CreatedLists,
+  JoinedLists,
+  DiscoverLists,
+  Invitations,
   PageNotFound,
-  PublicLists,
-  SharedWithMeLists,
 };
