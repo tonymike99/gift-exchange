@@ -1,4 +1,4 @@
-import styles from "./Individual.module.css";
+import styles from "./IndividualList.module.css";
 import { Sidebar, Navbar, WishlistProductsTable } from "../../components/index";
 import AddIcon from "@mui/icons-material/Add";
 import VisibilityIcon from "@mui/icons-material/Visibility";

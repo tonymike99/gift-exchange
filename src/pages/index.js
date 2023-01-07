@@ -4,6 +4,7 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import Profile from "./Profile/Profile";
 import Lists from "./Lists/Lists";
+import IndividualList from "./IndividualList/IndividualList";
 import PersonalLists from "./PersonalLists/PersonalLists";
 import PublicLists from "./PublicLists/PublicLists";
 import SharedWithMeLists from "./SharedWithMeLists/SharedWithMeLists";
@@ -16,6 +17,7 @@ export {
   Signup,
   Profile,
   Lists,
+  IndividualList,
   PersonalLists,
   PageNotFound,
   PublicLists,
