@@ -12,7 +12,7 @@ import Spinner from "../Spinner/Spinner";
 function Header() {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const storedTheme = localStorage.getItem("theme");
+  const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
 
   useEffect(() => {
@@ -36,19 +36,25 @@ function Header() {
     setExpandMenu(false);
   };
 
-  if (user.status === "succeeded" && user.data.name) {
-    localStorage.setItem("userId", user.data.id);
-    toast.success("You are now logged in!", {
-      theme: toastTheme,
-      toastId: "1",
-    });
-  }
+  const localStorageUserId = JSON.parse(
+    JSON.stringify(localStorage.getItem("userId"))
+  );
 
-  if (user.status === "failed" && user.error) {
-    toast.error(user.error, {
-      theme: toastTheme,
-      toastId: "2",
-    });
+  if (!localStorageUserId) {
+    if (user.status === "succeeded" && user.data.name) {
+      localStorage.setItem("userId", user.data.id);
+      toast.success("You are now logged in!", {
+        theme: toastTheme,
+        toastId: "1",
+      });
+    }
+
+    if (user.status === "failed" && user.error) {
+      toast.error(user.error, {
+        theme: toastTheme,
+        toastId: "2",
+      });
+    }
   }
 
   return (

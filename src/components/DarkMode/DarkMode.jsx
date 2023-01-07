@@ -14,7 +14,7 @@ function DarkMode() {
     document.documentElement.setAttribute("data-theme", "light");
   };
 
-  const storedTheme = localStorage.getItem("theme");
+  const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
 
   const prefersDark =
     window.matchMedia &&

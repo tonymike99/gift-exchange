@@ -3,7 +3,7 @@ import { SERVER_URL } from "../../constants/constants";
 import { toast } from "react-toastify";
 
 function ContactUs() {
-  const storedTheme = localStorage.getItem("theme");
+  const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
 
   return (
@@ -16,10 +16,12 @@ function ContactUs() {
           className="flex flex-col gap-6"
           action={SERVER_URL + "/contactus"}
           method="POST"
-          onSubmit={toast.success("Your response has been recorded!", {
-            theme: toastTheme,
-            toastId: "1",
-          })}
+          onSubmit={() =>
+            toast.success("Your response has been recorded!", {
+              theme: toastTheme,
+              toastId: "1",
+            })
+          }
         >
           <input
             className="border"
@@ -28,7 +30,7 @@ function ContactUs() {
             id="name"
             placeholder="Name"
             required
-            maxlength="100"
+            maxLength="100"
           />
           <input
             className="border"
@@ -37,7 +39,7 @@ function ContactUs() {
             id="email"
             placeholder="Email"
             required
-            maxlength="100"
+            maxLength="100"
           />
           <input
             className="border"
@@ -46,7 +48,7 @@ function ContactUs() {
             id="subject"
             placeholder="Subject"
             required
-            maxlength="250"
+            maxLength="250"
           />
           <textarea
             className="border"
@@ -56,7 +58,7 @@ function ContactUs() {
             rows="8"
             placeholder="Description"
             required
-            maxlength="750"
+            maxLength="750"
           ></textarea>
           <button
             type="submit"

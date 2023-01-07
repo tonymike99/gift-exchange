@@ -5,7 +5,9 @@ import { useSelector } from "react-redux";
 function RestrictedRoute() {
   const user = useSelector((state) => state.user);
   const location = useLocation();
-  const localStorageUserId = localStorage.getItem("userId");
+  const localStorageUserId = JSON.parse(
+    JSON.stringify(localStorage.getItem("userId"))
+  );
 
   return localStorageUserId ?? user.data.id ? (
     <Navigate to="/lists" state={{ from: location }} replace />
