@@ -34,7 +34,7 @@ function Profile() {
           <span className="font-bold mr-2">
             <CalendarMonthIcon /> Joined Date:
           </span>
-          {created.slice(0, 10)}
+          {created?.slice(0, 10)}
         </p>
       </div>
     </main>
