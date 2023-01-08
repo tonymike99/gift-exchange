@@ -42,7 +42,7 @@ function Header() {
 
   if (!localStorageUserId) {
     if (user.status === "succeeded" && user.data.name) {
-      localStorage.setItem("userId", user.data.id);
+      localStorage.setItem("userId", user.data._id);
       toast.success("You are now logged in!", {
         theme: toastTheme,
         toastId: "1",

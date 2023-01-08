@@ -9,7 +9,7 @@ function PrivateRoute() {
     JSON.stringify(localStorage.getItem("userId"))
   );
 
-  return localStorageUserId ?? user.data.id ? (
+  return localStorageUserId ?? user.data._id ? (
     <Outlet />
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />

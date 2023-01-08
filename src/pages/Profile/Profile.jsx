@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 function Profile() {
   const user = useSelector((state) => state.user);
-  const { id, name, email, created, image } = user.data;
+  const { _id, name, email, created, image } = user.data;
 
   return (
     <main className="p-6 flex flex-col md:flex-row gap-8 justify-center items-center">
@@ -16,7 +16,7 @@ function Profile() {
           <span className="font-bold mr-2">
             <FingerprintIcon /> Id:
           </span>
-          {id}
+          {_id}
         </p>
         <p>
           <span className="font-bold mr-2">
