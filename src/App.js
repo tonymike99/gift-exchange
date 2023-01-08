@@ -7,6 +7,7 @@ import {
   Signup,
   Profile,
   Lists,
+  IndividualList,
   CreatedLists,
   JoinedLists,
   DiscoverLists,
@@ -32,9 +33,13 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/lists" element={<Lists />} />
           <Route path="/lists/created" element={<CreatedLists />} />
+          <Route path="/lists/created/:_id" element={<IndividualList />} />
           <Route path="/lists/joined" element={<JoinedLists />} />
+          <Route path="/lists/joined/:_id" element={<IndividualList />} />
           <Route path="/lists/discover" element={<DiscoverLists />} />
+          <Route path="/lists/discover/:_id" element={<IndividualList />} />
           <Route path="/lists/invitations" element={<Invitations />} />
+          <Route path="/lists/discover" element={<DiscoverLists />} />
         </Route>
 
         {/* Restricted Routes */}
