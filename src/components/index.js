@@ -9,6 +9,8 @@ import MenuList from "./MenuList/MenuList";
 import CreateNewListModalSidebar from "./CreateNewList/CreateNewListModalSidebar";
 import CreateNewListModalNavbar from "./CreateNewList/CreateNewListModalNavbar";
 import CreateNewListForm from "./CreateNewList/CreateNewListForm";
+import CreateNewProductModal from "./CreateNewProduct/CreateNewProductModal";
+import CreateNewProductForm from "./CreateNewProduct/CreateNewProductForm";
 
 export {
   Header,
@@ -22,4 +24,6 @@ export {
   CreateNewListModalSidebar,
   CreateNewListModalNavbar,
   CreateNewListForm,
+  CreateNewProductModal,
+  CreateNewProductForm,
 };
