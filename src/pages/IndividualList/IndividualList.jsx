@@ -1,5 +1,10 @@
 import styles from "./IndividualList.module.css";
-import { Sidebar, Navbar, WishlistProductsTable } from "../../components/index";
+import {
+  Sidebar,
+  Navbar,
+  WishlistProductsTable,
+  CreateNewProductModal,
+} from "../../components/index";
 import AddIcon from "@mui/icons-material/Add";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EventIcon from "@mui/icons-material/Event";
@@ -24,6 +29,7 @@ function IndividualList() {
       });
       setList(response.data.list);
     })();
+    // eslint-disable-next-line
   }, []);
 
   const location = useLocation();
@@ -41,7 +47,7 @@ function IndividualList() {
         </p>
         <p className="text-lg font-bold">
           <EventIcon />
-          {" Date of gift exchange: " + list.endDate.slice(0, 10)}
+          {" Date of gift exchange: " + list.endDate?.slice(0, 10)}
         </p>
         <p className="text-lg font-bold">
           <CurrencyRupeeIcon />
@@ -71,11 +77,9 @@ function IndividualList() {
           <FavoriteIcon />
           {" Wishlist: " + list.wishlist?.length}
         </p>
-        <WishlistProductsTable wishlistProducts={list.wishlist} />
+        <WishlistProductsTable wishlist={list.wishlist} />
         <div>
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">
-            <AddIcon /> Add product
-          </button>
+          <CreateNewProductModal />
         </div>
       </main>
       <Navbar />
