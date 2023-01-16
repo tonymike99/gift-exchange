@@ -36,7 +36,7 @@ function CreateNewListForm() {
         type="date"
         name="endDate"
         id="endDate"
-        placeholder="Date"
+        placeholder="Date of gift exchange"
       />
       <input
         className="border"
