@@ -6,6 +6,9 @@ import Navbar from "./Navbar/Navbar";
 import ListsTable from "./ListsTable/ListsTable";
 import WishlistProductsTable from "./WishlistProductsTable/WishlistProductsTable";
 import MenuList from "./MenuList/MenuList";
+import CreateNewListModalSidebar from "./CreateNewList/CreateNewListModalSidebar";
+import CreateNewListModalNavbar from "./CreateNewList/CreateNewListModalNavbar";
+import CreateNewListForm from "./CreateNewList/CreateNewListForm";
 
 export {
   Header,
@@ -16,4 +19,7 @@ export {
   ListsTable,
   WishlistProductsTable,
   MenuList,
+  CreateNewListModalSidebar,
+  CreateNewListModalNavbar,
+  CreateNewListForm,
 };
