@@ -41,7 +41,7 @@ function IndividualList() {
         </p>
         <p className="text-lg font-bold">
           <EventIcon />
-          {" Date of gift exchange: " + list.date}
+          {" Date of gift exchange: " + list.endDate.slice(0, 10)}
         </p>
         <p className="text-lg font-bold">
           <CurrencyRupeeIcon />
