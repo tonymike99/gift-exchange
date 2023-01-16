@@ -7,7 +7,7 @@ function MenuList({ setExpandMenu }) {
   };
 
   const handleLogoutOnClick = () => {
-    localStorage.removeItem("userId");
+    sessionStorage.removeItem("userId");
   };
 
   return (

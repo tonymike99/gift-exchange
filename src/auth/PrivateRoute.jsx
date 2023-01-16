@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 function PrivateRoute() {
   const user = useSelector((state) => state.user);
   const location = useLocation();
-  const localStorageUserId = JSON.parse(
-    JSON.stringify(localStorage.getItem("userId"))
+  const sessionStorageUserId = JSON.parse(
+    JSON.stringify(sessionStorage.getItem("userId"))
   );
 
-  return localStorageUserId ?? user.data._id ? (
+  return sessionStorageUserId ?? user.data._id ? (
     <Outlet />
   ) : (
     <Navigate to="/login" state={{ from: location }} replace />

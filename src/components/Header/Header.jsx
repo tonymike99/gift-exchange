@@ -36,13 +36,13 @@ function Header() {
     setExpandMenu(false);
   };
 
-  const localStorageUserId = JSON.parse(
-    JSON.stringify(localStorage.getItem("userId"))
+  const sessionStorageUserId = JSON.parse(
+    JSON.stringify(sessionStorage.getItem("userId"))
   );
 
-  if (!localStorageUserId) {
+  if (!sessionStorageUserId) {
     if (user.status === "succeeded" && user.data.name) {
-      localStorage.setItem("userId", user.data._id);
+      sessionStorage.setItem("userId", user.data._id);
       toast.success("You are now logged in!", {
         theme: toastTheme,
         toastId: "1",
