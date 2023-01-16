@@ -1,19 +1,26 @@
 import { Link } from "react-router-dom";
-import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
+import EditIcon from "@mui/icons-material/Edit";
 import FolderSharedIcon from "@mui/icons-material/FolderShared";
-import FolderOpenIcon from "@mui/icons-material/FolderOpen";
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
+import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
+import { CreateNewListModalNavbar } from "../index";
 
 function Navbar() {
   return (
-    <nav className="fixed bottom-0 w-full flex flex-row justify-between py-6">
-      <Link to="/lists/personal" className="ml-3 px-3">
-        <FolderSpecialIcon /> Personal
+    <nav className="fixed bottom-0 w-full flex flex-row justify-between p-5">
+      <CreateNewListModalNavbar />
+
+      <Link to="/lists/created">
+        <EditIcon />
       </Link>
-      <Link to="/lists/shared-with-me" className="ml-3 px-3">
-        <FolderSharedIcon /> Shared with Me
+      <Link to="/lists/joined">
+        <FolderSharedIcon />
       </Link>
-      <Link to="/lists/public" className="ml-3 px-3">
-        <FolderOpenIcon /> Public
+      <Link to="/lists/discover">
+        <TravelExploreIcon />
+      </Link>
+      <Link to="/lists/invitations">
+        <MarkEmailUnreadIcon />
       </Link>
     </nav>
   );
