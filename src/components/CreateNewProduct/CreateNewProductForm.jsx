@@ -12,7 +12,7 @@ function CreateNewProductForm() {
   return (
     <form
       className="flex flex-col gap-6"
-      action={SERVER_URL + "/lists/" + listId}
+      action={`${SERVER_URL}/lists/${listId}/wishlist`}
       method="POST"
       onSubmit={() =>
         toast.success("New product has been added!", {
