@@ -11,6 +11,8 @@ import CreateNewListModalNavbar from "./CreateNewList/CreateNewListModalNavbar";
 import CreateNewListForm from "./CreateNewList/CreateNewListForm";
 import CreateNewProductModal from "./CreateNewProduct/CreateNewProductModal";
 import CreateNewProductForm from "./CreateNewProduct/CreateNewProductForm";
+import InviteFriendForm from "./InviteFriend/InviteFriendForm";
+import InviteFriendModal from "./InviteFriend/InviteFriendModal";
 
 export {
   Header,
@@ -26,4 +28,6 @@ export {
   CreateNewListForm,
   CreateNewProductModal,
   CreateNewProductForm,
+  InviteFriendModal,
+  InviteFriendForm,
 };
