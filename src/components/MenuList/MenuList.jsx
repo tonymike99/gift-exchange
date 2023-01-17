@@ -20,7 +20,7 @@ function MenuList({ setExpandMenu }) {
         Profile
       </Link>
       <a
-        href={SERVER_URL + "/logout"}
+        href={`${SERVER_URL}/logout`}
         className="hover:bg-slate-500 cursor-pointer py-1 pl-2 pr-4 rounded block"
         onClick={handleLogoutOnClick}
       >
