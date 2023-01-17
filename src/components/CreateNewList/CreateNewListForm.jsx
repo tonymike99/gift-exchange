@@ -27,7 +27,7 @@ function CreateNewListForm() {
         type="text"
         name="name"
         id="name"
-        placeholder="Name"
+        placeholder="Name *"
         required
         maxLength="100"
       />

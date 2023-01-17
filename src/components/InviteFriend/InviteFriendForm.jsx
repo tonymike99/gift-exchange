@@ -26,7 +26,8 @@ function InviteFriendForm() {
         type="email"
         name="email"
         id="email"
-        placeholder="Enter your friend's email"
+        placeholder="Enter your friend's email *"
+        required
       />
       <button
         type="submit"

@@ -28,7 +28,7 @@ function ContactUs() {
             type="text"
             name="name"
             id="name"
-            placeholder="Name"
+            placeholder="Name *"
             required
             maxLength="100"
           />
@@ -37,7 +37,7 @@ function ContactUs() {
             type="email"
             name="email"
             id="email"
-            placeholder="Email"
+            placeholder="Email *"
             required
             maxLength="100"
           />
@@ -46,7 +46,7 @@ function ContactUs() {
             type="text"
             name="subject"
             id="subject"
-            placeholder="Subject"
+            placeholder="Subject *"
             required
             maxLength="250"
           />
@@ -56,7 +56,7 @@ function ContactUs() {
             id="description"
             cols="30"
             rows="8"
-            placeholder="Description"
+            placeholder="Description *"
             required
             maxLength="750"
           ></textarea>

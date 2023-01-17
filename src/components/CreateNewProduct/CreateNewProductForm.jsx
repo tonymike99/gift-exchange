@@ -26,23 +26,16 @@ function CreateNewProductForm() {
         type="text"
         name="name"
         id="name"
-        placeholder="Name"
+        placeholder="Name *"
         required
         maxLength="100"
-      />
-      <input
-        className="border"
-        type="number"
-        name="price"
-        id="price"
-        placeholder="Price"
       />
       <input
         className="border"
         type="text"
         name="link"
         id="link"
-        placeholder="Product Link"
+        placeholder="Product Link *"
         required
       />
       <input
