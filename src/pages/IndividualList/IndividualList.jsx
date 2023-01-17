@@ -4,12 +4,10 @@ import {
   Navbar,
   WishlistProductsTable,
   CreateNewProductModal,
+  InviteFriendModal,
 } from "../../components/index";
-import AddIcon from "@mui/icons-material/Add";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EventIcon from "@mui/icons-material/Event";
-import PersonIcon from "@mui/icons-material/Person";
-import HomeIcon from "@mui/icons-material/Home";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import GroupIcon from "@mui/icons-material/Group";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -53,26 +51,29 @@ function IndividualList() {
           <CurrencyRupeeIcon />
           {" Budget: " + list.budget}
         </p>
-        <p className="text-lg font-bold capitalize">
-          <PersonIcon />
-          {" Name: "} {list.patron?.name}
-        </p>
-        <p className="text-lg font-bold">
-          <HomeIcon />
-          {" Address: "} {list.patron?.address}
-        </p>
-        <p className="text-lg font-bold">
-          <GroupIcon />
-          {" Members: " + list.members?.length}
-        </p>
-        <div className="flex gap-2">
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">
-            <AddIcon /> Invite member
-          </button>
-          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg">
-            Show all members
-          </button>
-        </div>
+        {list.visibility !== "private" && (
+          <>
+            <p className="text-lg font-bold">
+              <GroupIcon />
+              {" Members: " + list.members?.length}
+            </p>
+            {list.members?.map((member) => (
+              <div>
+                {member.name} - {member.email}
+              </div>
+            ))}
+            <InviteFriendModal />
+            <p className="text-lg font-bold">
+              <GroupIcon />
+              {" Invited: " + list.invitees?.length}
+            </p>
+            {list.invitees?.map((invitee) => (
+              <div>
+                {invitee.name} - {invitee.email}
+              </div>
+            ))}
+          </>
+        )}
         <p className="text-lg font-bold">
           <FavoriteIcon />
           {" Wishlist: " + list.wishlist?.length}
