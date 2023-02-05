@@ -2,6 +2,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import RemoveDoneIcon from "@mui/icons-material/RemoveDone";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 function WishlistProductsTable({ wishlist }) {
   return (
@@ -10,11 +11,10 @@ function WishlistProductsTable({ wishlist }) {
         <thead>
           <tr>
             <th>No.</th>
+            <th>Link</th>
             <th>Picture</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Link</th>
-            <th>Notes</th>
             <th>Options</th>
           </tr>
         </thead>
@@ -25,15 +25,16 @@ function WishlistProductsTable({ wishlist }) {
               className={product.isDone ? "line-through" : ""}
             >
               <td>{index}</td>
-              <td>{product.picture}</td>
-              <td>{product.name}</td>
-              <td>{product.price}</td>
               <td>
-                <a href={product.link} className="underline">
-                  {product.link}
+                <a href={product.link} target="_blank" rel="noreferrer">
+                  <LaunchIcon />
                 </a>
               </td>
-              <td>{product.notes}</td>
+              <td>
+                <img className="w-20" src={product.picture} alt="" />
+              </td>
+              <td>{product.name}</td>
+              <td>₹{product.price}</td>
               <td>
                 <span className="cursor-pointer">
                   <EditIcon color="info" />

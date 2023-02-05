@@ -24,26 +24,10 @@ function CreateNewProductForm() {
       <input
         className="border"
         type="text"
-        name="name"
-        id="name"
-        placeholder="Name *"
-        required
-        maxLength="100"
-      />
-      <input
-        className="border"
-        type="text"
         name="link"
         id="link"
-        placeholder="Product Link *"
+        placeholder="Amazon Product Link *"
         required
-      />
-      <input
-        className="border"
-        type="text"
-        name="notes"
-        id="notes"
-        placeholder="Notes"
       />
       <button
         type="submit"
