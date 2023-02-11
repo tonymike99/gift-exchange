@@ -34,6 +34,33 @@ function IndividualList() {
   const listId = location.pathname.split("/")[3];
   const [list, setList] = useState([]);
 
+  const updateProductInWishlist = async (asin, isDone) => {
+    const response = await axios.request({
+      method: "PUT",
+      baseURL: SERVER_URL,
+      url: `/lists/${listId}/wishlist`,
+      data: {
+        asin,
+        isDone,
+      },
+      withCredentials: true,
+    });
+    setList(response.data.list);
+  };
+
+  const deleteProductInWishlist = async (asin) => {
+    const response = await axios.request({
+      method: "DELETE",
+      baseURL: SERVER_URL,
+      url: `/lists/${listId}/wishlist`,
+      data: {
+        asin,
+      },
+      withCredentials: true,
+    });
+    setList(response.data.list);
+  };
+
   return (
     <div className={styles["main-container"]}>
       <Sidebar />
@@ -78,7 +105,11 @@ function IndividualList() {
           <FavoriteIcon />
           {" Wishlist: " + list.wishlist?.length}
         </p>
-        <WishlistProductsTable wishlist={list.wishlist} />
+        <WishlistProductsTable
+          wishlist={list.wishlist}
+          updateProductInWishlist={updateProductInWishlist}
+          deleteProductInWishlist={deleteProductInWishlist}
+        />
         <div>
           <CreateNewProductModal />
         </div>

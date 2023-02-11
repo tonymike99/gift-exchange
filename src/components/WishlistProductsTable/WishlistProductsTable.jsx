@@ -1,10 +1,13 @@
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
 import RemoveDoneIcon from "@mui/icons-material/RemoveDone";
 import LaunchIcon from "@mui/icons-material/Launch";
 
-function WishlistProductsTable({ wishlist }) {
+function WishlistProductsTable({
+  wishlist,
+  updateProductInWishlist,
+  deleteProductInWishlist,
+}) {
   return (
     <div className="table-wrapper">
       <table>
@@ -36,18 +39,24 @@ function WishlistProductsTable({ wishlist }) {
               <td>{product.name}</td>
               <td>₹{product.price}</td>
               <td>
-                <span className="cursor-pointer">
-                  <EditIcon color="info" />
-                </span>
-                <span className="cursor-pointer">
+                <span
+                  className="cursor-pointer"
+                  onClick={() => deleteProductInWishlist(product.asin)}
+                >
                   <DeleteIcon color="error" />
                 </span>
                 {product.isDone ? (
-                  <span className="cursor-pointer">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => updateProductInWishlist(product.asin, false)}
+                  >
                     <RemoveDoneIcon color="error" />
                   </span>
                 ) : (
-                  <span className="cursor-pointer">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => updateProductInWishlist(product.asin, true)}
+                  >
                     <DoneAllIcon color="info" />
                   </span>
                 )}
