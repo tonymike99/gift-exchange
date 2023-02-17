@@ -10,7 +10,7 @@ function RestrictedRoute() {
   );
 
   return sessionStorageUserId ?? user.data._id ? (
-    <Navigate to="/lists" state={{ from: location }} replace />
+    <Navigate to="/lists/created" state={{ from: location }} replace />
   ) : (
     <Outlet />
   );
