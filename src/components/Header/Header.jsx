@@ -43,6 +43,7 @@ function Header() {
   if (!sessionStorageUserId) {
     if (user.status === "succeeded" && user.data.name) {
       sessionStorage.setItem("userId", user.data._id);
+      setTimeout(() => sessionStorage.removeItem("userId"), 60 * 60 * 1000);
       toast.success("You are now logged in!", {
         theme: toastTheme,
         toastId: "1",
