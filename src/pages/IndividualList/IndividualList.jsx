@@ -38,7 +38,7 @@ function IndividualList() {
   };
 
   const updateProductInWishlist = async (asin, isDone) => {
-    const response = await axios.request({
+    await axios.request({
       method: "PUT",
       baseURL: SERVER_URL,
       url: `/lists/${listId}/wishlist`,
@@ -48,11 +48,12 @@ function IndividualList() {
       },
       withCredentials: true,
     });
-    setList(response.data.list);
+
+    getListData();
   };
 
   const deleteProductInWishlist = async (asin) => {
-    const response = await axios.request({
+    await axios.request({
       method: "DELETE",
       baseURL: SERVER_URL,
       url: `/lists/${listId}/wishlist`,
@@ -61,7 +62,8 @@ function IndividualList() {
       },
       withCredentials: true,
     });
-    setList(response.data.list);
+
+    getListData();
   };
 
   return (
