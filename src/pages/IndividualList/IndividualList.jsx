@@ -17,22 +17,25 @@ import { SERVER_URL } from "../../constants/constants";
 import { useLocation } from "react-router-dom";
 
 function IndividualList() {
+  const location = useLocation();
+  const listId = location.pathname.split("/")[3];
+
+  const [list, setList] = useState([]);
+
   useEffect(() => {
-    (async () => {
-      const response = await axios.request({
-        method: "GET",
-        baseURL: SERVER_URL,
-        url: `/lists/${listId}`,
-        withCredentials: true,
-      });
-      setList(response.data.list);
-    })();
+    getListData();
     // eslint-disable-next-line
   }, []);
 
-  const location = useLocation();
-  const listId = location.pathname.split("/")[3];
-  const [list, setList] = useState([]);
+  const getListData = async () => {
+    const response = await axios.request({
+      method: "GET",
+      baseURL: SERVER_URL,
+      url: `/lists/${listId}`,
+      withCredentials: true,
+    });
+    setList(response.data.list);
+  };
 
   const updateProductInWishlist = async (asin, isDone) => {
     const response = await axios.request({

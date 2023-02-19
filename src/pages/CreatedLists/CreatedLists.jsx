@@ -5,22 +5,24 @@ import axios from "axios";
 import { SERVER_URL } from "../../constants/constants";
 
 function CreatedLists() {
+  const [createdLists, setCreatedLists] = useState([]);
+
   useEffect(() => {
-    (async () => {
-      const response = await axios.request({
-        method: "GET",
-        params: {
-          type: "created",
-        },
-        baseURL: SERVER_URL,
-        url: "/lists",
-        withCredentials: true,
-      });
-      setCreatedLists(response.data.lists);
-    })();
+    getAllCreatedListsData();
   }, []);
 
-  const [createdLists, setCreatedLists] = useState([]);
+  const getAllCreatedListsData = async () => {
+    const response = await axios.request({
+      method: "GET",
+      params: {
+        type: "created",
+      },
+      baseURL: SERVER_URL,
+      url: "/lists",
+      withCredentials: true,
+    });
+    setCreatedLists(response.data.lists);
+  };
 
   return (
     <div className={styles["main-container"]}>
