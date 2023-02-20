@@ -116,7 +116,7 @@ function IndividualList() {
           deleteProductInWishlist={deleteProductInWishlist}
         />
         <div>
-          <CreateNewProductModal />
+          <CreateNewProductModal getListData={getListData} />
         </div>
       </main>
       <Navbar />

@@ -4,7 +4,7 @@ import { CreateNewProductForm } from "../index";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 
-function CreateNewProductModal() {
+function CreateNewProductModal({ getListData }) {
   const customStyles = {
     content: {
       top: "50%",
@@ -50,7 +50,10 @@ function CreateNewProductModal() {
           <CloseIcon />
         </button>
         <h2 className="text-2xl font-bold text-center mb-5">Add Product</h2>
-        <CreateNewProductForm />
+        <CreateNewProductForm
+          getListData={getListData}
+          closeModal={closeModal}
+        />
       </Modal>
     </>
   );

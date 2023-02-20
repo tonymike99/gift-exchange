@@ -1,25 +1,45 @@
 import { SERVER_URL } from "../../constants/constants";
 import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
-function CreateNewProductForm() {
+function CreateNewProductForm({ getListData, closeModal }) {
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
 
   const location = useLocation();
   const listId = location.pathname.split("/")[3];
 
+  const [link, setLink] = useState("");
+
+  const createProductInWishlist = async () => {
+    await axios.request({
+      method: "POST",
+      baseURL: SERVER_URL,
+      url: `/lists/${listId}/wishlist`,
+      data: {
+        link,
+      },
+      withCredentials: true,
+    });
+
+    getListData();
+  };
+
   return (
     <form
       className="flex flex-col gap-6"
-      action={`${SERVER_URL}/lists/${listId}/wishlist`}
-      method="POST"
-      onSubmit={() =>
+      onSubmit={(e) => {
+        e.preventDefault();
+        createProductInWishlist();
+        closeModal();
+        setLink("");
         toast.success("New product has been added!", {
           theme: toastTheme,
           toastId: "1",
-        })
-      }
+        });
+      }}
     >
       <input
         className="border"
@@ -27,6 +47,7 @@ function CreateNewProductForm() {
         name="link"
         id="link"
         placeholder="Amazon Product Link *"
+        onChange={(e) => setLink(e.target.value)}
         required
       />
       <button
