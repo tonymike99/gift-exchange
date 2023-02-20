@@ -33,10 +33,13 @@ function CreateNewListForm() {
       />
       <input
         className="border"
-        type="date"
+        type="text"
         name="endDate"
         id="endDate"
         placeholder="Date of gift exchange"
+        min={new Date().toISOString().split("T")[0]}
+        onFocus={(e) => (e.target.type = "date")}
+        onBlur={(e) => (e.target.type = "text")}
       />
       <input
         className="border"
