@@ -48,7 +48,7 @@ function CreateNewListModalNavbar() {
           <CloseIcon />
         </button>
         <h2 className="text-2xl font-bold text-center mb-5">Create List</h2>
-        <CreateNewListForm />
+        <CreateNewListForm closeModal={closeModal} />
       </Modal>
     </>
   );
