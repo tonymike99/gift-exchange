@@ -24,12 +24,23 @@ function CreatedLists() {
     setCreatedLists(response.data.lists);
   };
 
+  const deleteList = async (listId) => {
+    await axios.request({
+      method: "DELETE",
+      baseURL: SERVER_URL,
+      url: `/lists/${listId}`,
+      withCredentials: true,
+    });
+
+    getAllCreatedListsData();
+  };
+
   return (
     <div className={styles["main-container"]}>
       <Sidebar />
       <main className=" p-6 flex flex-col gap-8">
         <h1 className="text-4xl font-bold">Created Lists</h1>
-        <ListsTable lists={createdLists} />
+        <ListsTable lists={createdLists} deleteList={deleteList} />
       </main>
       <Navbar />
     </div>

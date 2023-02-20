@@ -4,7 +4,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Link, useLocation } from "react-router-dom";
 
-function ListsTable({ lists }) {
+function ListsTable({ lists, deleteList }) {
   const location = useLocation();
 
   return (
@@ -36,7 +36,10 @@ function ListsTable({ lists }) {
                   <span className="cursor-pointer">
                     <EditIcon color="info" />
                   </span>
-                  <span className="cursor-pointer">
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => deleteList(list._id)}
+                  >
                     <DeleteIcon color="error" />
                   </span>
                 </>
