@@ -1,6 +1,8 @@
 import styles from "./ContactUs.module.css";
 import { SERVER_URL } from "../../constants/constants";
+import { useState } from "react";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 function ContactUs() {
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
@@ -8,11 +10,42 @@ function ContactUs() {
 
   // ----------------------------------------------------------------------------------------------------
 
-  const handleContactUsFormOnSubmit = () =>
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [description, setDescription] = useState("");
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const registerContactUsRequest = async () => {
+    await axios.request({
+      method: "POST",
+      baseURL: SERVER_URL,
+      url: `/contactus`,
+      data: {
+        name,
+        email,
+        subject,
+        description,
+      },
+      withCredentials: true,
+    });
+  };
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const handleContactUsFormOnSubmit = (e) => {
+    e.preventDefault();
+    registerContactUsRequest();
+    setName("");
+    setEmail("");
+    setSubject("");
+    setDescription("");
     toast.success("Your response has been recorded!", {
       theme: toastTheme,
       toastId: "1",
     });
+  };
 
   // ----------------------------------------------------------------------------------------------------
 
@@ -24,9 +57,7 @@ function ContactUs() {
         <h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>
         <form
           className="flex flex-col gap-6"
-          action={SERVER_URL + "/contactus"}
-          method="POST"
-          onSubmit={handleContactUsFormOnSubmit}
+          onSubmit={(e) => handleContactUsFormOnSubmit(e)}
         >
           <input
             className="border"
@@ -36,6 +67,8 @@ function ContactUs() {
             placeholder="Name *"
             required
             maxLength="100"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
           <input
             className="border"
@@ -45,6 +78,8 @@ function ContactUs() {
             placeholder="Email *"
             required
             maxLength="100"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <input
             className="border"
@@ -54,6 +89,8 @@ function ContactUs() {
             placeholder="Subject *"
             required
             maxLength="250"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
           />
           <textarea
             className="border"
@@ -64,6 +101,8 @@ function ContactUs() {
             placeholder="Description *"
             required
             maxLength="750"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
           ></textarea>
           <button
             type="submit"
