@@ -65,6 +65,7 @@ function CreateNewListForm({ closeModal }) {
       <select
         name="visibility"
         id="visibility"
+        value={visibility}
         onChange={(e) => setVisibility(e.target.value)}
       >
         <option value="private">Private</option>
@@ -79,6 +80,7 @@ function CreateNewListForm({ closeModal }) {
         placeholder="Name *"
         required
         maxLength="100"
+        value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <input
@@ -88,6 +90,7 @@ function CreateNewListForm({ closeModal }) {
         id="endDate"
         placeholder="Date of gift exchange"
         min={new Date().toISOString().split("T")[0]}
+        value={endDate}
         onFocus={(e) => (e.target.type = "date")}
         onBlur={(e) => (e.target.type = "text")}
         onChange={(e) => setEndDate(e.target.value)}
@@ -98,6 +101,7 @@ function CreateNewListForm({ closeModal }) {
         name="budget"
         id="budget"
         placeholder="Budget"
+        value={budget}
         onChange={(e) => setBudget(e.target.value)}
       />
       <button

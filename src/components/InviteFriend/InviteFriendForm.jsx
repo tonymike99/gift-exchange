@@ -59,6 +59,7 @@ function InviteFriendForm({ getListData, closeModal }) {
         name="email"
         id="email"
         placeholder="Enter your friend's email *"
+        value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
