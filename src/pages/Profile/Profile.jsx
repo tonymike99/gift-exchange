@@ -8,6 +8,8 @@ function Profile() {
   const user = useSelector((state) => state.user);
   const { _id, name, email, created, image } = user.data;
 
+  // ----------------------------------------------------------------------------------------------------
+
   return (
     <main className="p-6 flex flex-col md:flex-row gap-8 justify-center items-center">
       <img src={image} alt="" className="rounded-full border w-32" />

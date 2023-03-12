@@ -13,6 +13,7 @@ import CreateNewProductModal from "./CreateNewProduct/CreateNewProductModal";
 import CreateNewProductForm from "./CreateNewProduct/CreateNewProductForm";
 import InviteFriendForm from "./InviteFriend/InviteFriendForm";
 import InviteFriendModal from "./InviteFriend/InviteFriendModal";
+import Spinner from "./Spinner/Spinner";
 
 export {
   Header,
@@ -30,4 +31,5 @@ export {
   CreateNewProductForm,
   InviteFriendModal,
   InviteFriendForm,
+  Spinner,
 };

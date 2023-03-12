@@ -61,14 +61,25 @@ textarea {
   resize: none !important;
 }
 
+@media screen and (max-width: 600px) {
+  .table-wrapper {
+    white-space: nowrap;
+    width: 100vw;
+  }
+}
+
 .table-wrapper {
-  overflow-x: scroll;
-  white-space: nowrap;
-  width: 90vw;
+  /* overflow-x: scroll; */
+  /* white-space: nowrap; */
+  /* width: 100%; */
+  /* margin: auto; */
+  width: 100%;
 }
 
 table {
   border: 1px solid var(--background-color);
+  width: 100%;
+  overflow-x: scroll;
 }
 
 th {
@@ -82,4 +93,9 @@ td {
   text-align: center;
   padding: 1rem;
   color: var(--font-color);
+}
+
+th:last-child,
+tr:last-child {
+  width: 10%;
 }

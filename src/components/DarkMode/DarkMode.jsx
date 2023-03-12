@@ -1,7 +1,7 @@
+import "./DarkMode.css";
+import { useState } from "react";
 import ToggleOffIcon from "@mui/icons-material/ToggleOff";
 import ToggleOnIcon from "@mui/icons-material/ToggleOn";
-import { useState } from "react";
-import "./DarkMode.css";
 
 function DarkMode() {
   const setDark = () => {
@@ -13,6 +13,8 @@ function DarkMode() {
     localStorage.setItem("theme", "light");
     document.documentElement.setAttribute("data-theme", "light");
   };
+
+  // ----------------------------------------------------------------------------------------------------
 
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
 
@@ -27,6 +29,8 @@ function DarkMode() {
 
   if (defaultDark) {
     setDark();
+
+    // ----------------------------------------------------------------------------------------------------
   }
 
   const handleDarkModeOnClick = () => {
@@ -38,6 +42,8 @@ function DarkMode() {
       setDark();
     }
   };
+
+  // ----------------------------------------------------------------------------------------------------
 
   return (
     <div>

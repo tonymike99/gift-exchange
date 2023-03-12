@@ -6,6 +6,16 @@ function ContactUs() {
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
 
+  // ----------------------------------------------------------------------------------------------------
+
+  const handleContactUsFormOnSubmit = () =>
+    toast.success("Your response has been recorded!", {
+      theme: toastTheme,
+      toastId: "1",
+    });
+
+  // ----------------------------------------------------------------------------------------------------
+
   return (
     <main
       className={styles["main-container"] + " p-6 flex flex-col items-center"}
@@ -16,12 +26,7 @@ function ContactUs() {
           className="flex flex-col gap-6"
           action={SERVER_URL + "/contactus"}
           method="POST"
-          onSubmit={() =>
-            toast.success("Your response has been recorded!", {
-              theme: toastTheme,
-              toastId: "1",
-            })
-          }
+          onSubmit={handleContactUsFormOnSubmit}
         >
           <input
             className="border"

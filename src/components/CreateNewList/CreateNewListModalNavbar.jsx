@@ -1,6 +1,6 @@
+import { CreateNewListForm } from "../index";
 import React from "react";
 import Modal from "react-modal";
-import { CreateNewListForm } from "../index";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -30,6 +30,8 @@ function CreateNewListModalNavbar() {
   function closeModal() {
     setIsModalOpen(false);
   }
+
+  // ----------------------------------------------------------------------------------------------------
 
   return (
     <>

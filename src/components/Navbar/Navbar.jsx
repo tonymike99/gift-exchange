@@ -1,9 +1,9 @@
+import { CreateNewListModalNavbar } from "../index";
 import { Link } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import FolderSharedIcon from "@mui/icons-material/FolderShared";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
-import { CreateNewListModalNavbar } from "../index";
 
 function Navbar() {
   return (

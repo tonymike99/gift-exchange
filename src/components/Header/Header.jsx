@@ -1,32 +1,39 @@
+import { DarkMode, MenuList, Spinner } from "../index";
+import { APP_NAME_SENTENCE_CASE } from "../../constants/constants";
+import { getUserDetails } from "../../redux/features/user/userSlice";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { DarkMode, MenuList } from "../index";
+import { toast } from "react-toastify";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useEffect, useState } from "react";
-import { APP_NAME_SENTENCE_CASE } from "../../constants/constants";
-import { useSelector, useDispatch } from "react-redux";
-import { getUserDetails } from "../../redux/features/user/userSlice";
-import { toast } from "react-toastify";
-import Spinner from "../Spinner/Spinner";
 
 function Header() {
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const [expandHeader, setExpandHeader] = useState(false);
+  const [expandMenu, setExpandMenu] = useState(false);
+
+  // ----------------------------------------------------------------------------------------------------
 
   useEffect(() => {
     dispatch(getUserDetails());
     // eslint-disable-next-line
   }, []);
 
-  const [expandHeader, setExpandHeader] = useState(false);
+  // ----------------------------------------------------------------------------------------------------
 
   const handleExpandHeaderOnClick = () => {
     setExpandHeader(!expandHeader);
   };
-
-  const [expandMenu, setExpandMenu] = useState(false);
 
   const handleExpandMenuOnMouseOver = () => {
     setExpandMenu(true);
@@ -39,6 +46,8 @@ function Header() {
   const sessionStorageUserId = JSON.parse(
     JSON.stringify(sessionStorage.getItem("userId"))
   );
+
+  // ----------------------------------------------------------------------------------------------------
 
   if (!sessionStorageUserId) {
     if (user.status === "succeeded" && user.data.name) {
@@ -57,6 +66,8 @@ function Header() {
       });
     }
   }
+
+  // ----------------------------------------------------------------------------------------------------
 
   return (
     <>

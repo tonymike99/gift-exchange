@@ -6,26 +6,32 @@ import {
   CreateNewProductModal,
   InviteFriendModal,
 } from "../../components/index";
+import { SERVER_URL } from "../../constants/constants";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EventIcon from "@mui/icons-material/Event";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import GroupIcon from "@mui/icons-material/Group";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { SERVER_URL } from "../../constants/constants";
-import { useLocation } from "react-router-dom";
 
 function IndividualList() {
-  const location = useLocation();
-  const listId = location.pathname.split("/")[3];
-
   const [list, setList] = useState([]);
+
+  // ----------------------------------------------------------------------------------------------------
 
   useEffect(() => {
     getListData();
     // eslint-disable-next-line
   }, []);
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const location = useLocation();
+  const listId = location.pathname.split("/")[3];
+
+  // ----------------------------------------------------------------------------------------------------
 
   const getListData = async () => {
     const response = await axios.request({
@@ -34,6 +40,7 @@ function IndividualList() {
       url: `/lists/${listId}`,
       withCredentials: true,
     });
+
     setList(response.data.list);
   };
 
@@ -65,6 +72,8 @@ function IndividualList() {
 
     getListData();
   };
+
+  // ----------------------------------------------------------------------------------------------------
 
   return (
     <div className={styles["main-container"]}>

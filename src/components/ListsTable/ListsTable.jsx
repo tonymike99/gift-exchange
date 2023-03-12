@@ -1,11 +1,13 @@
+import { Link, useLocation } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
-import { Link, useLocation } from "react-router-dom";
 
 function ListsTable({ lists, deleteList }) {
   const location = useLocation();
+
+  // ----------------------------------------------------------------------------------------------------
 
   return (
     <table>

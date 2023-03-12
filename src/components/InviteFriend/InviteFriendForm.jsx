@@ -1,25 +1,32 @@
 import { SERVER_URL } from "../../constants/constants";
-import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function InviteFriendForm() {
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
 
+  // ----------------------------------------------------------------------------------------------------
+
   const location = useLocation();
   const listId = location.pathname.split("/")[3];
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const handleInviteFriendFormOnSubmit = () =>
+    toast.success("Your friend has been invited!", {
+      theme: toastTheme,
+      toastId: "1",
+    });
+
+  // ----------------------------------------------------------------------------------------------------
 
   return (
     <form
       className="flex flex-col gap-6"
       action={`${SERVER_URL}/lists/${listId}/invite`}
       method="POST"
-      onSubmit={() =>
-        toast.success("Your friend has been invited!", {
-          theme: toastTheme,
-          toastId: "1",
-        })
-      }
+      onSubmit={handleInviteFriendFormOnSubmit}
     >
       <input
         className="border"

@@ -1,6 +1,6 @@
+import { CreateNewProductForm } from "../index";
 import React from "react";
 import Modal from "react-modal";
-import { CreateNewProductForm } from "../index";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -30,6 +30,8 @@ function CreateNewProductModal({ getListData }) {
   function closeModal() {
     setIsModalOpen(false);
   }
+
+  // ----------------------------------------------------------------------------------------------------
 
   return (
     <>

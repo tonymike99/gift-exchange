@@ -1,19 +1,25 @@
 import { SERVER_URL } from "../../constants/constants";
-import { toast } from "react-toastify";
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function CreateNewListForm({ closeModal }) {
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
+
+  // ----------------------------------------------------------------------------------------------------
 
   const [visibility, setVisibility] = useState("private");
   const [name, setName] = useState("");
   const [endDate, setEndDate] = useState("");
   const [budget, setBudget] = useState("");
 
+  // ----------------------------------------------------------------------------------------------------
+
   const navigate = useNavigate();
+
+  // ----------------------------------------------------------------------------------------------------
 
   const createList = async () => {
     await axios.request({
@@ -33,22 +39,28 @@ function CreateNewListForm({ closeModal }) {
     navigate("/login");
   };
 
+  // ----------------------------------------------------------------------------------------------------
+
+  const handleCreateListFormOnSubmit = (e) => {
+    e.preventDefault();
+    createList();
+    closeModal();
+    setVisibility("");
+    setName("");
+    setEndDate("");
+    setBudget("");
+    toast.success("New list has been created!", {
+      theme: toastTheme,
+      toastId: "1",
+    });
+  };
+
+  // ----------------------------------------------------------------------------------------------------
+
   return (
     <form
       className="flex flex-col gap-6"
-      onSubmit={(e) => {
-        e.preventDefault();
-        createList();
-        closeModal();
-        setVisibility("");
-        setName("");
-        setEndDate("");
-        setBudget("");
-        toast.success("New list has been created!", {
-          theme: toastTheme,
-          toastId: "1",
-        });
-      }}
+      onSubmit={handleCreateListFormOnSubmit}
     >
       <select
         name="visibility"
