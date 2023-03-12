@@ -59,6 +59,7 @@ function CreateNewProductForm({ getListData, closeModal }) {
         name="link"
         id="link"
         placeholder="Amazon Product Link *"
+        pattern="https://www.amazon.in/+"
         value={link}
         onChange={(e) => setLink(e.target.value)}
         required
