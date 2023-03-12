@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import AddIcon from "@mui/icons-material/Add";
 import CloseIcon from "@mui/icons-material/Close";
 
-function InviteFriendModal() {
+function InviteFriendModal({ getListData }) {
   const customStyles = {
     content: {
       top: "50%",
@@ -52,7 +52,7 @@ function InviteFriendModal() {
           <CloseIcon />
         </button>
         <h2 className="text-2xl font-bold text-center mb-5">Invite friend</h2>
-        <InviteFriendForm />
+        <InviteFriendForm getListData={getListData} closeModal={closeModal} />
       </Modal>
     </div>
   );

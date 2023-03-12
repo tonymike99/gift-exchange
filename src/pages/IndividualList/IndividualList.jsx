@@ -103,7 +103,7 @@ function IndividualList() {
                 {member.name} - {member.email}
               </div>
             ))}
-            <InviteFriendModal />
+            <InviteFriendModal getListData={getListData} />
             <p className="text-lg font-bold">
               <GroupIcon />
               {" Invited: " + list.invitees?.length}

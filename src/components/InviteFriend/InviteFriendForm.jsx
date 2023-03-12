@@ -1,10 +1,16 @@
 import { SERVER_URL } from "../../constants/constants";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import { toast } from "react-toastify";
+import axios from "axios";
 
-function InviteFriendForm() {
+function InviteFriendForm({ getListData, closeModal }) {
   const storedTheme = JSON.parse(JSON.stringify(localStorage.getItem("theme")));
   const toastTheme = storedTheme === "light" ? "dark" : "light";
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const [email, setEmail] = useState("");
 
   // ----------------------------------------------------------------------------------------------------
 
@@ -13,20 +19,39 @@ function InviteFriendForm() {
 
   // ----------------------------------------------------------------------------------------------------
 
-  const handleInviteFriendFormOnSubmit = () =>
+  const handleInviteFriendFormOnSubmit = (e) => {
+    e.preventDefault();
+    inviteFriend();
+    closeModal();
+    setEmail("");
     toast.success("Your friend has been invited!", {
       theme: toastTheme,
       toastId: "1",
     });
+  };
+
+  // ----------------------------------------------------------------------------------------------------
+
+  const inviteFriend = async () => {
+    await axios.request({
+      method: "POST",
+      baseURL: SERVER_URL,
+      url: `/lists/${listId}/invite`,
+      data: {
+        email,
+      },
+      withCredentials: true,
+    });
+
+    getListData();
+  };
 
   // ----------------------------------------------------------------------------------------------------
 
   return (
     <form
       className="flex flex-col gap-6"
-      action={`${SERVER_URL}/lists/${listId}/invite`}
-      method="POST"
-      onSubmit={handleInviteFriendFormOnSubmit}
+      onSubmit={(e) => handleInviteFriendFormOnSubmit(e)}
     >
       <input
         className="border"
@@ -34,6 +59,7 @@ function InviteFriendForm() {
         name="email"
         id="email"
         placeholder="Enter your friend's email *"
+        onChange={(e) => setEmail(e.target.value)}
         required
       />
       <button
