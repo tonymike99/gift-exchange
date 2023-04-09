@@ -1,33 +1,55 @@
-import { SERVER_URL } from "../../constants/constants";
-import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
+import { SERVER_URL } from "../../constants/constants";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 const googleIconColored = require("../../assets/img/google-icon-colored.svg");
 
 function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <main
       className={styles["main-container"] + " p-6 flex flex-col items-center"}
     >
       <div className="w-3/4 lg:w-1/2 xl:w-1/4">
         <h1 className="text-4xl font-bold mb-6 text-center">Login</h1>
-        <form className="flex flex-col gap-6" action="" method="POST">
+        <form className="flex flex-col gap-6">
           <input
+            className="border"
             type="text"
             name="username"
             id="username"
             placeholder="Enter your username"
             required
-            className="border"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <input
+            className="border"
             type="password"
             name="password"
             id="password"
             placeholder="Enter your password"
             required
-            className="border"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="bg-blue-500 text-white py-4 px-2 rounded-lg">
+          <button
+            className="bg-blue-500 text-white py-4 px-2 rounded-lg"
+            onClick={async () => {
+              await axios.request({
+                method: "POST",
+                baseURL: SERVER_URL,
+                url: `/auth/local/login`,
+                data: {
+                  username,
+                  password,
+                },
+              });
+            }}
+          >
             Sign in
           </button>
           <p className="text-center">OR</p>
