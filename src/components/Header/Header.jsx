@@ -49,7 +49,7 @@ function Header() {
 
   // ----------------------------------------------------------------------------------------------------
 
-  if (!sessionStorageUserId) {
+  if (sessionStorageUserId !== null) {
     if (user.status === "succeeded" && user.data.name) {
       sessionStorage.setItem("userId", user.data._id);
       setTimeout(() => sessionStorage.removeItem("userId"), 60 * 60 * 1000);
@@ -57,9 +57,7 @@ function Header() {
         theme: toastTheme,
         toastId: "1",
       });
-    }
-
-    if (user.status === "failed" && user.error) {
+    } else if (user.status === "failed" && user.error) {
       toast.error(user.error, {
         theme: toastTheme,
         toastId: "2",
